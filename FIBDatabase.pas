@@ -1849,7 +1849,7 @@ var
   i: Integer;
   SV: PISC_STATUS;
 begin
-  // isc_res:=0;
+   isc_res:=0;
   (*
    * Check that the database is *not* active, and that it
    * has a database name
