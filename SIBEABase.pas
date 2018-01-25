@@ -299,8 +299,10 @@ begin
   ErrorBuffer := @Buffer;
   ErrorVector := @StatusVector;
   repeat
-    Synchronize(SIBInterpretError);
-//    SIBInterpretError;
+    if FVCLSynchro then
+      Synchronize(SIBInterpretError)
+    else
+      SIBInterpretError;
     errCode := ResultStatus;
     if (Ansistring(lastMsg) <> Ansistring(Buffer)) then
     begin
@@ -450,10 +452,10 @@ end;
 // waiting for events to be received
 procedure TSIBEventThread.Execute;
 begin
-  RegisterEvents;
-  QueueEvents;
-
   try
+    RegisterEvents;
+    QueueEvents;
+
     repeat
       // wait for an event to be signaled
       Signal.WaitFor(INFINITE);
@@ -687,16 +689,18 @@ end;
 procedure TSIBEventAlerter.ThreadEnded(Sender: TObject);
 var
   ThreadIdx: Integer;
+  RetVal: Integer;
 begin
   if (Sender is TSIBEventThread) then
   begin
+    RetVal := TSIBEventThread(Sender).ReturnValue;
     // Remove terminating thread from thread list
     ThreadIdx := FThreads.IndexOf(Sender);
     if (ThreadIdx > -1) then
       FThreads.Delete(ThreadIdx);
 
     // if any thread had an exception, then unregister everything
-    if (TSIBEventThread(Sender).ReturnValue = 1) then
+    if (RetVal = 1) then
     begin
       if Registered then
         UnRegisterEvents;
