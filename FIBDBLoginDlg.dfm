@@ -1,8 +1,8 @@
 object frmFIBDBLoginDlg: TfrmFIBDBLoginDlg
   Left = 328
   Top = 272
-  Width = 293
-  Height = 222
+  Width = 303
+  Height = 242
   HorzScrollBar.Range = 280
   VertScrollBar.Range = 185
   ActiveControl = EdPassword
@@ -15,10 +15,9 @@ object frmFIBDBLoginDlg: TfrmFIBDBLoginDlg
   Font.Name = 'MS Sans Serif'
   Font.Pitch = fpVariable
   Font.Style = []
-  OldCreateOrder = True
   Position = poScreenCenter
+  Scaled = False
   OnCreate = FormCreate
-  PixelsPerInch = 96
   TextHeight = 13
   object Bevel1: TBevel
     Left = 8
