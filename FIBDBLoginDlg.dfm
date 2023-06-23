@@ -1,8 +1,8 @@
 object frmFIBDBLoginDlg: TfrmFIBDBLoginDlg
   Left = 328
   Top = 272
-  Width = 293
-  Height = 222
+  Width = 308
+  Height = 241
   HorzScrollBar.Range = 280
   VertScrollBar.Range = 185
   ActiveControl = EdPassword
@@ -11,15 +11,12 @@ object frmFIBDBLoginDlg: TfrmFIBDBLoginDlg
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
-  Font.Height = 11
-  Font.Name = 'MS Sans Serif'
-  Font.Pitch = fpVariable
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
   Font.Style = []
-  OldCreateOrder = True
   Position = poScreenCenter
   OnCreate = FormCreate
-  PixelsPerInch = 96
-  TextHeight = 13
+  TextHeight = 15
   object Bevel1: TBevel
     Left = 8
     Top = 8
@@ -59,22 +56,22 @@ object frmFIBDBLoginDlg: TfrmFIBDBLoginDlg
   object Label2: TLabel
     Left = 16
     Top = 65
-    Width = 59
-    Height = 13
+    Width = 64
+    Height = 15
     Caption = 'User Name :'
   end
   object Label3: TLabel
     Left = 16
     Top = 89
-    Width = 52
-    Height = 13
+    Width = 56
+    Height = 15
     Caption = 'Password :'
   end
   object Label4: TLabel
     Left = 16
     Top = 112
-    Width = 28
-    Height = 13
+    Width = 29
+    Height = 15
     Caption = 'Role :'
   end
   object Button1: TButton
@@ -101,14 +98,14 @@ object frmFIBDBLoginDlg: TfrmFIBDBLoginDlg
     Left = 83
     Top = 62
     Width = 179
-    Height = 21
+    Height = 23
     TabOrder = 2
   end
   object EdPassword: TEdit
     Left = 83
     Top = 86
     Width = 179
-    Height = 21
+    Height = 23
     PasswordChar = '*'
     TabOrder = 3
   end
@@ -116,7 +113,7 @@ object frmFIBDBLoginDlg: TfrmFIBDBLoginDlg
     Left = 83
     Top = 110
     Width = 179
-    Height = 21
+    Height = 23
     TabOrder = 4
   end
 end

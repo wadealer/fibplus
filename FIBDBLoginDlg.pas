@@ -58,7 +58,7 @@ type
 implementation
 
 {$R *.dfm}
-uses fib, FIBConsts;
+uses fib, FIBConsts, Windows;
 
  function pFIBLoginDialogEx(const ADatabaseName: string;
    var AUserName, APassword,ARoleName: string
@@ -96,6 +96,9 @@ begin
   Label4.Caption := SDBEditSQLRole;
   Button1.Caption := SOKButton;
   Button2.Caption := SCancelButton;
+
+  Width  := MulDiv(Width,  Screen.PixelsPerInch, USER_DEFAULT_SCREEN_DPI);
+  Height := MulDiv(Height, Screen.PixelsPerInch, USER_DEFAULT_SCREEN_DPI);
 end;
 
 initialization
