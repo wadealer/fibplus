@@ -2333,8 +2333,8 @@ end;
 
 const
   InternalFunctionCount = 32;
-  DefKeywordsCount = 280;
-  DefTypesCount = 17;
+  DefKeywordsCount = 296;
+  DefTypesCount = 21;
 
   InternalFunctions: array [0 .. InternalFunctionCount - 1] of AnsiString = ('AVG', 'CAST', 'COUNT', 'GEN_ID', 'MAX',
     'MIN', 'SUM', 'UPPER',
@@ -2371,15 +2371,23 @@ const
     'UPDATE', 'USER', 'USING', 'VALUE', 'VALUES', 'VARIABLE', 'VARYING', 'VERSION', 'VIEW', 'WAIT', 'WEEKDAY', 'WHEN',
     'WHENEVER', 'WHERE', 'WHILE', 'WITH', 'WORK', 'WRITE', 'YEAR', 'YEARDAY',
     // Additional
-    'FIRST', 'SKIP', 'RECREATE', 'CURRENT_USER', 'CURRENT_ROLE', 'PLANONLY', 'LIMIT', 'SECONDS', 'ROWS', 'PERCENT',
+    'FIRST', 'SKIP', 'RECREATE', 'CURRENT_USER', 'CURRENT_ROLE', 'PLANONLY', 'LIMIT', 'SECONDS', 'ROW', 'PERCENT',
     'TIES', 'NEW', 'OLD', 'CURRENT_CONNECTION', 'CURRENT_TRANSACTION',
 
-    'INSERTING', 'UPDATING', 'DELETING', 'ROW_COUNT', 'FREE_IT');
+    'INSERTING', 'UPDATING', 'DELETING', 'ROW_COUNT', 'FREE_IT',
+    //more from FB3 https://www.firebirdsql.org/file/documentation/release_notes/html/en/3_0/rlsnotes30.html#rnfb30-reswords
+    'DETERMINISTIC', 'OVER', 'OFFSET', 'SCROLL', 'SQLSTATE',
+    //FB4 https://www.firebirdsql.org/file/documentation/release_notes/html/en/4_0/rlsnotes40.html#rnfb40-reswords
+    'LATERAL', 'LOCAL', 'LOCALTIME', 'LOCALTIMESTAMP', 'TIMEZONE_HOUR', 'TIMEZONE_MINUTE',
+    'PUBLICATION', 'RESETTING', 'UNBOUNDED', 'WINDOW', 'WITHOUT');
 
   DefTypes: array [0 .. DefTypesCount - 1] of AnsiString = ('BLOB', 'AnsiChar', 'CHARACTER', 'DATE', 'DECIMAL',
     'DOUBLE', 'FLOAT', 'INTEGER', 'NUMERIC', 'SMALLINT', 'TIME', 'TIMESTAMP', 'VARCHAR',
     // Additional
-    'INT64', 'BIGINT', 'BOOLEAN', 'CSTRING');
+    'INT64', 'BIGINT', 'BOOLEAN', 'CSTRING',
+    //FB4
+    'BINARY', 'DECFLOAT', 'INT128', 'VARBINARY'
+	);
 
 var
   vI: Integer;
