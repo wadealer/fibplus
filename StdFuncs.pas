@@ -454,6 +454,7 @@ begin
     'N': Result:=(s='NULL') or (s='NOW');
     'T': Result:=(s='TODAY') or (s='TOMORROW'); 
     'Y': Result:=(s='YESTERDAY');
+    'L': Result:=(s='LOCALTIME') or (s='LOCALTIMESTAMP')
   end;
 end;
 
